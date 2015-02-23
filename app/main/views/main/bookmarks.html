@@ -1,0 +1,22 @@
+<:Title>
+  Bookmarks
+
+<:Body>
+	<form e-submit="add_bookmark" role="form">
+		<div class="form-group">
+      		<label>New Bookmark</label>
+      		<input class="form-control" type='text' value="{{ page._new_bookmark._description }}" />
+      		<input class="form-control" type="text" value="{{ page._new_bookmark._url  }}" />
+      		<input type="submit" value="Add Bookmark" />
+    	</div>
+  	</form>
+
+  <h1>Bookmark list</h1>
+
+  <ul class="bookmark-list">
+    {{ _bookmarks.each do |bookmark| }}
+      <li>
+        <a href="{{ bookmark._url }}">{{ bookmark._description }}</a>
+      </li>
+    {{ end }}
+  </ul>
